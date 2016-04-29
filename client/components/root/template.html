@@ -1,0 +1,88 @@
+<div>
+    <div class="navbar navbar-inverse">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="javascript:void(0)" style="font-weight: bold; font-size: 50px;">
+                        Network Administration
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row monospace">
+            <div data-bind="foreach: list">
+                <div class="panel" data-bind="css: { 'panel-success': $data.online, 'panel-danger': !$data.online }">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <strong data-bind="visible: $data.name !== false, text: $data.name"></strong>
+                            <strong data-bind="visible: $data.name === false">
+                                <i>Unnamed</i>
+                            </strong>
+                            <span class="pull-right" data-bind="text: $data.ip"></span>
+                        </h3>
+                    </div>
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th style="width: 50%;">Aliases</th>
+                                <th style="width: 50%;">Services</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <ul data-bind="foreach: $data.aliases" style="padding-left: 10px; margin-bottom: 0;">
+                                        <li data-bind="text: $data"></li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul data-bind="foreach: $data.services" style="padding-left: 10px; margin-bottom: 0;">
+                                        <li>
+                                             <span data-bind="text: $data.name"></span>
+                                             <span class="label label-info" data-bind="text: $data.port"></span>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+           <!-- <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Address</th>
+                        <th>Status</th>
+                        <th>DNS</th>
+                        <th>Services</th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: list" class="monospace">
+                    <tr>
+                        <td data-bind="text: $data.ip"></td>
+                        <td>
+                            <span class="label label-success" data-bind="visible: $data.online">Online</span>
+                            <span class="label label-danger" data-bind="visible: !$data.online">Offline</span>
+                        </td>
+                        <td data-bind="foreach: $data.dns">
+                            <div>
+                                <span data-bind="text: $data.name"></span>
+                                <span class="label label-info" data-bind="text: $data.type"></span>
+                            </div>
+                        </td>
+                        <td data-bind="foreach: $data.services" class="clearfix">
+                            <div>
+                                <span data-bind="text: $data.name"></span>
+                                <span class="label label-info" data-bind="text: $data.port"></span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>-->
+        </div>
+    </div>
+</div>

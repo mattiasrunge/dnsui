@@ -1,0 +1,30 @@
+{
+  "name": "dnsui",
+  "version": "0.0.1",
+  "description": "A simple Bind9 interface for use to configure a local domains for local networks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "cd client && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattiasrunge/dnsui.git"
+  },
+  "keywords": [
+    "dns",
+    "ui"
+  ],
+  "author": "Mattias Runge <mattias@runge.se>",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/mattiasrunge/dnsui/issues"
+  },
+  "homepage": "https://github.com/mattiasrunge/dnsui#readme",
+  "dependencies": {
+    "bluebird": "^3.0.0",
+    "fs-promise": "^0.3.1",
+    "mfw": "0.0.12",
+    "xml2json": "^0.9.0"
+  }
+}
